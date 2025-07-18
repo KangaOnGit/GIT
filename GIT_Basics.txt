@@ -21,9 +21,18 @@ There are 3 Stages, Work -> Stage -> Commit
         *To remove it, use git -add [that exact file] to Stage and it will delete it there
 
     + "-init" -> Add .git file, don't remove, if remove lose all history
+
     + "status" -> Red: Not In Stage | Green: In Stage
+
     + "add" -> Add files to Stage
         "-add ." -> Add all files
         "-add *[file_type]" -> Add all files with type == [file_type]
+
     + "commit -m "[commit_msg]" -> Add files to Commit with msg = [commit_msg]
         + "commit" -> Open the COMMIT_EDITMSG file, you can see the files in Stage and newly edited file
+
+    + "mv [old_file_name] [new_file_name]" -> Change [old_file_name] to
+                                                            [new_file_name] (Remember the file type)
+        * IF YOU RENAMED A FILE. ADD IT TO STAGE RIGHT AWAY.
+        * If you renamed and don't add, and then modify it, [old_file_name]
+                                            will be created along with [new_file_name]
