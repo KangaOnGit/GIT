@@ -1,16 +1,17 @@
 START
 
-God Sent Video: https://www.youtube.com/watch?v=8JJ101D3knE
+Consult the video: https://www.youtube.com/watch?v=8JJ101D3knE
+                https://www.youtube.com/watch?v=S7XpTAnSDL4
 CONSULT THE DOCUMENTATION: https://git-scm.com/docs
 or the cheatsheet: https://education.github.com/git-cheat-sheet-education.pdf
 
 Commands:
 
-- echo
+- echo commands
     + "> [file_name]" -> Create a [file_name] (Remember to include .txt, .py, .ipynb, etc.)
-    + ">> [file_name]" -> Append to file file_name
+    + ">> [Msg] [file_name]" -> Append [Msg] to file file_name
 
-- git
+- git commands
 There are 3 Stages, Work -> Stage -> Commit
     Use add to add file to Stage
     Use commit to add file FROM stage to Commit
@@ -27,17 +28,41 @@ There are 3 Stages, Work -> Stage -> Commit
                     Check if files have been Modified or Deleted
 
     + "stage [file_name]" -> Add [file_name] to Stage
+            (Literally add)
 
     + "add [file_name]" -> Add file_name to Stage
         "-add ." -> Add all files
         "-add *[file_type]" -> Add all files with type == [file_type]
 
-    + "commit -m "[commit_msg]" -> Add files to Commit with msg = [commit_msg]
+    + "commit -m [commit_msg]" -> Add files to Commit with msg = [commit_msg]
         + "commit" -> Open the COMMIT_EDITMSG file, you can see the files in Stage and newly edited file
+        + "commit -a" -> Commit all Files (No msg) | Skip Staging 
+        + "commit -am [commit_msg]" -> Commit all Files (With msg) | Skip Staging
 
-    + "mv [old_file_name] [new_file_name]" -> Change [old_file_name] to
-                                                            [new_file_name] (Remember the file type)
+    + "mv [old_file_name] [new_file_name]" -> Change [old_file_name] to [new_file_name] (Staged)
+                                                        (You can even change the type)
         * You have to commit the changes to stage first AND THEN change the file name
-        * IF YOU RENAMED A FILE. ADD IT TO STAGE RIGHT AWAY.
-        * If you renamed and don't add, and then modify it, [old_file_name]
+        * The [new_file_name] will be tracked IMMEDIATELY
+        * If you renamed and don't commit, and then modify it, [old_file_name]
                                             will be created along with [new_file_name]
+
+    + "ls-files" -> Files in the Staging Area
+    
+    + "rm [file1] [file2] [...]" -> Remove file from repo + staging Area
+        + "rm *.[file_type]" -> Remove all file with type = [file_type] from working directory + staging Area
+        + "rm ." -> Remove all files from repo + staging Area
+
+    + "
+
+Misc:
+
+    + "ls" -> List all files in working directory
+
+    + "rm [file_name]" -> Remove file_name
+
+    + "mv [old_file_name] [new_file_name]" -> Change [old_file_name] to [new_file_name] (Unstaged)
+            * The [new_file_name] will NOT be tracked so you gotta add it IMMEDIATELY to Staging
+            * If you renamed and don't add, and then modify it, [old_file_name]
+                                            will be created along with [new_file_name]
+                => You gotta do git -add [old_file_name] to remove that old file
+                        then do git -add [new_file_name] to start tracking the renamed file
