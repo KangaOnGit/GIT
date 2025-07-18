@@ -23,8 +23,12 @@ There are 3 Stages, Work -> Stage -> Commit
     + "-init" -> Add .git file, don't remove, if remove lose all history
 
     + "status" -> Red: Not In Stage | Green: In Stage
+                    Check if everything is in Stage/Committed.
+                    Check if files have been Modified or Deleted
 
-    + "add" -> Add files to Stage
+    + "stage [file_name]" -> Add [file_name] to Stage
+
+    + "add [file_name]" -> Add file_name to Stage
         "-add ." -> Add all files
         "-add *[file_type]" -> Add all files with type == [file_type]
 
