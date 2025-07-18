@@ -52,10 +52,10 @@ There are 3 Stages, Work -> Stage -> Commit
         + "rm *.[file_type]" -> Remove all file with type = [file_type] from working directory + staging Area
         + "rm ." -> Remove all files from repo + staging Area
 
-    + "
+    + "rm --cached [file_to_remove]" -> Only remove from staging area (or Index by oldheads)
+        + "rm --cached -r [file_to_remove]" -> Only remove from staging area (recursive removal)
 
-Misc:
-
+- Other Commands:
     + "ls" -> List all files in working directory
 
     + "rm [file_name]" -> Remove file_name
@@ -66,3 +66,19 @@ Misc:
                                             will be created along with [new_file_name]
                 => You gotta do git -add [old_file_name] to remove that old file
                         then do git -add [new_file_name] to start tracking the renamed file
+
+    "mkdir [dir_name]" -> Create directory name [dir_name]
+
+    "cd [dir_name]" -> Change directory to [dir_name]
+
+
+---------
+.gitignore:
+    - Will ignore the files written in it
+            + Does not add to staging (even if use add all)
+            + Does not commit them (even if use commit all)
+        * If you add a file to staging area and commit it
+        * If you THEN add that file to gitignore, it will still stay in the staging area
+        * And ANY changes made to that file will count as a modification
+                        -> Gotta add it to staging area and COMMIT IT.
+                        -> We gotta delete it from the staging area
