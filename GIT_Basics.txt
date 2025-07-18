@@ -87,7 +87,8 @@ There are 3 Stages, Work -> Stage -> Commit
             "diff" -> Comparing work dir to staging area
                             Same thing as diff --staged
                             -[red_color] -> This line has been changed
-            "difftool" -> Visual Tool, open the difftool so we can see changes
+            "difftool" -> Visual Tool, open difftool to compare work dir files thats going to staging area 
+            "difftool --staged" -> open difftool to compare staging area files thats going to commit
 
 
                          
@@ -107,7 +108,6 @@ There are 3 Stages, Work -> Stage -> Commit
     "mkdir [dir_name]" -> Create directory name [dir_name]
 
     "cd [dir_name]" -> Change directory to [dir_name]
-
 
 ---------
 .gitignore:
