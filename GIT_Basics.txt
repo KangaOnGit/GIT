@@ -26,6 +26,16 @@ There are 3 Stages, Work -> Stage -> Commit
     + "status" -> Red: Not In Stage | Green: In Stage
                     Check if everything is in Stage/Committed.
                     Check if files have been Modified or Deleted
+        + "status -s" -> Red M on Right Side: modified in repo but that change not in staging area
+                         Green M on Left Side: All the changes in repo is now in staging area
+                         Green M on Left, Red M on Right: Changes in Staging Area, changes
+                                                                    in repo but not added to staging area
+                         Double Red ? (??): New file, not in Staging Area and newly added to repo
+                         Green A on Left: Added to Staging Area
+                        *Right Column/Side -> Working directory/repo
+                        *Left Column/Side -> Staging Area
+                        *M: Modified
+                        *A: Added
 
     + "stage [file_name]" -> Add [file_name] to Stage
             (Literally add)
@@ -54,6 +64,33 @@ There are 3 Stages, Work -> Stage -> Commit
 
     + "rm --cached [file_to_remove]" -> Only remove from staging area (or Index by oldheads)
         + "rm --cached -r [file_to_remove]" -> Only remove from staging area (recursive removal)
+                * REMEMBER TO COMMIT THE REMOVE
+
+    + "diff --staged" -> Showcase what we have in Staging Area that's going to commit (use visual tools instead)
+                        comparing a/[file_name] to b/[file_name]: a means the old file, b means the new file
+                         index: metadata
+                         Changes in old file is indicated by - / minus sign 
+                         Changes in new file is indicated by + / plus sign 
+                         @@ @@ header: - / minus sign indicates old copy
+                                        + / plus sign indicates new copy
+                            Ex: -1, 3 -> Starting from 1st line, 3 Lines have been extracted (old file)
+                                +1, 5 -> Starting frm 1st line, 5 Lines have been extracted (new file)
+                         +[green_color] -> Added lines to the new copy
+                         *If there are multiple files, after comparing 1st file, moves to 2nd
+                         If you create a new file:
+                            new file mode [id]
+                            index: metadata
+                            Since we create new file, there's NO old file
+                                It will display --- /dev/null
+                        @@ -0,0 +1@@ Starting from line 0, 0 lines have been extracted since there was no file
+                                    One line has been added to the new file
+            "diff" -> Comparing work dir to staging area
+                            Same thing as diff --staged
+                            -[red_color] -> This line has been changed
+            "difftool" -> Visual Tool, open the difftool so we can see changes
+
+
+                         
 
 - Other Commands:
     + "ls" -> List all files in working directory
@@ -74,7 +111,8 @@ There are 3 Stages, Work -> Stage -> Commit
 
 ---------
 .gitignore:
-    - Will ignore the files written in it
+    - Will ignore the files written in it (If you modify the file in gitignore,
+                                                            git will ignore the modification)
             + Does not add to staging (even if use add all)
             + Does not commit them (even if use commit all)
         * If you add a file to staging area and commit it
@@ -82,3 +120,5 @@ There are 3 Stages, Work -> Stage -> Commit
         * And ANY changes made to that file will count as a modification
                         -> Gotta add it to staging area and COMMIT IT.
                         -> We gotta delete it from the staging area
+
+ALWAYS REVIEW WHAT U HAVE IN STAGING AREA B4 COMMIT
