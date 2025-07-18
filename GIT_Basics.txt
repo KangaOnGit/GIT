@@ -33,6 +33,7 @@ There are 3 Stages, Work -> Stage -> Commit
 
     + "mv [old_file_name] [new_file_name]" -> Change [old_file_name] to
                                                             [new_file_name] (Remember the file type)
+        * You have to commit the changes to stage first AND THEN change the file name
         * IF YOU RENAMED A FILE. ADD IT TO STAGE RIGHT AWAY.
         * If you renamed and don't add, and then modify it, [old_file_name]
                                             will be created along with [new_file_name]
