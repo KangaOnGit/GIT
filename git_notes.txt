@@ -1,0 +1,29 @@
+START
+
+God Sent Video: https://www.youtube.com/watch?v=8JJ101D3knE
+CONSULT THE DOCUMENTATION: https://git-scm.com/docs
+or the cheatsheet: https://education.github.com/git-cheat-sheet-education.pdf
+
+Commands:
+
+- echo
+    + "> [file_name]" -> Create a [file_name] (Remember to include .txt, .py, .ipynb, etc.)
+    + ">> [file_name]" -> Append to file file_name
+
+- git
+There are 3 Stages, Work -> Stage -> Commit
+    Use add to add file to Stage
+    Use commit to add file FROM stage to Commit
+        If you modify a file, Stage will contain THE OLD VERSION of the file you modified
+            => If you commit, you will commit the OLD VERSION and not the new one you modified
+            => You HAVE to add the modify file to the Stage to update init
+        *If you remove a file, that file you deleted will STILL BE in Stage
+        *To remove it, use git -add [that exact file] to Stage and it will delete it there
+
+    + "-init" -> Add .git file, don't remove, if remove lose all history
+    + "status" -> Red: Not In Stage | Green: In Stage
+    + "add" -> Add files to Stage
+        "-add ." -> Add all files
+        "-add *[file_type]" -> Add all files with type == [file_type]
+    + "commit -m "[commit_msg]" -> Add files to Commit with msg = [commit_msg]
+        + "commit" -> Open the COMMIT_EDITMSG file, you can see the files in Stage and newly edited file
