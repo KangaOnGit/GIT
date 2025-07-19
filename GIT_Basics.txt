@@ -129,6 +129,8 @@ There are 3 Stages, Working dir -> Staging Area -> Commit (3 Environments)
     + "branch -M [new_name]" -> Change the current branch name to [new_name] 
 --------------
 Github:
+RED -> Local
+GREEN -> Remote
     Local Repo: Stuff in your Device (git -init creaes local repo)
     Remote Repo: Stuff stored in a server (hence remote, any1 can access)
     
