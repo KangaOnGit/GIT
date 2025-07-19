@@ -5,14 +5,16 @@ Consult the video: https://www.youtube.com/watch?v=8JJ101D3knE
 CONSULT THE DOCUMENTATION: https://git-scm.com/docs
 or the cheatsheet: https://education.github.com/git-cheat-sheet-education.pdf
 
-Commands:
-
 - echo commands
     + "> [file_name]" -> Create a [file_name] (Remember to include .txt, .py, .ipynb, etc.)
     + ">> [Msg] [file_name]" -> Append [Msg] to file file_name
 
+-------------------
 - git commands
-There are 3 Stages, Work -> Stage -> Commit
+Q -> Exit               
+R -> Refresh
+T -> Tag 
+There are 3 Stages, Working dir -> Staging Area -> Commit (3 Environments)
     Use add to add file to Stage
     Use commit to add file FROM stage to Commit
         If you modify a file, Stage will contain THE OLD VERSION of the file you modified
@@ -44,7 +46,7 @@ There are 3 Stages, Work -> Stage -> Commit
         "-add ." -> Add all files
         "-add *[file_type]" -> Add all files with type == [file_type]
 
-    + "commit -m [commit_msg]" -> Add files to Commit with msg = [commit_msg]
+    + "commit -m "[commit_msg]" " -> Add files to Commit with msg = [commit_msg]
         + "commit" -> Open the COMMIT_EDITMSG file, you can see the files in Stage and newly edited file
         + "commit -a" -> Commit all Files (No msg) | Skip Staging 
         + "commit -am [commit_msg]" -> Commit all Files (With msg) | Skip Staging
@@ -57,6 +59,11 @@ There are 3 Stages, Work -> Stage -> Commit
                                             will be created along with [new_file_name]
 
     + "ls-files" -> Files in the Staging Area
+        "ls-tree HEAD~[number]" -> List all files in a tree stuct
+        Commits
+        Blobs -> Files
+        Trees -> Directories
+        Tags
     
     + "rm [file1] [file2] [...]" -> Remove file from repo + staging Area
         + "rm *.[file_type]" -> Remove all file with type = [file_type] from working directory + staging Area
@@ -90,13 +97,39 @@ There are 3 Stages, Work -> Stage -> Commit
             "difftool" -> Visual Tool, open difftool to compare work dir files thats going to staging area 
             "difftool --staged" -> open difftool to compare staging area files thats going to commit
 
+    + "log" -> Look up Commits History, Latest to Earliest
+        "log --oneline" -> Log but summarized
+        "log --oneline --reverse" -> Basically log but from Earliest to Latest
 
-                         
+    + "show [ID of Commit]" -> Show the author, files changed and what changed
+        "show HEAD~[number]" -> Start from head, move [number] lines after HEAD, basically index of Commits
+        "SHOW HEAD~[number]:[file]" -> Show specific file in [number] commit
 
+    + "restore --staged [file]" -> Replace file in staging area w/ its last snapshot
+        "restore --staged ." -> Replace ALL file in staging area w/ its last snapshot
+        "restore --staged *.[file_type]" -> Replace file with type = [file_type] in staging area w/ its last snapshot
+            *If you restore a FILE that has no snapshot -> Delete that file from staging area
+    
+    + "restore [file]" -> Replace [file] in working dir with [file] in staging area
+        "restore ." -> Replace all [file] in working dir with [file] in staging area
+        "restore *.[file_type]" -> Replace file with type = [file_type] in working dir with [file] in staging area
+            *If you try to restore a newly added file not in repo or staging
+                        -> Git dont have snapshot so it can't restore
+                        -> "git clean" to remove this untracked file
+
+    + "restore --source=[The commit you wanna revert to] [file]"
+                                -> Restore [file] to its version in [The commit you wanna revert to]
+
+    detached HEAD -> Head pointer no longe points to latest branch commit
+    + "checkout [snapshot/history ID]" -> Move to [snapshot/history ID] (past states)
+                                        => You can go back to the versions BEFORE and make changes there
+                                                (Or revert back to this version by making another branch and merge)
+
+---------------
 - Other Commands:
     + "ls" -> List all files in working directory
 
-    + "rm [file_name]" -> Remove file_name
+    + "rm [file_name]" -> Remove file_name (only from working dir)
 
     + "mv [old_file_name] [new_file_name]" -> Change [old_file_name] to [new_file_name] (Unstaged)
             * The [new_file_name] will NOT be tracked so you gotta add it IMMEDIATELY to Staging
