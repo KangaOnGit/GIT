@@ -134,14 +134,14 @@ Github:
     
     + "remote add origin [link 2 remote repo]" -> Clone entire remote repo
             *Origin is a another word for [link 2 remote repo]
-            
+
     + "push -u origin [branch]" -> Push origin/remote repo to [branch]
 
     + "checkout branch [branch_name]" -> Create new branch [branch_name] from the branch you're creating it in
                                         => If you create [branch_name] from main, [branch_name] will have files of main
                                 => If you create a new branch from [branch_name], new branch will have files of [branch_name]
 
-    + "branch [branch you wanna branch from] [the new branch name]" -> Create a branch from [branch u wanna branch from]
+    + "branch [the new branch name] [branch you wanna branch from]" -> Create a branch from [branch u wanna branch from]
                                                                                 named [the new branch name]
     + "checkout [branch_name]" -> Switch to branch [branch_name]
     + "checkout -b [branch_name]" Create branch [branch_name] and move to it immediately
