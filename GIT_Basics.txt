@@ -145,6 +145,9 @@ Github:
                                                         => Pushing the local branch to remote
                 - Or you can do "git push -u origin [branch]"
                 - After estalishing a connection then u can just do "git push" like normal
+                Remember to do "git push" (push is to push to remote repo)
+                                and not "git commit" (git commit is for local)
+                    Do "git commit" first then push tho
 
     + "pull" -> If somebody made changes to your remote branch that you're tracking with your local branch
                     do "git pull" To fetch changes from that remote branch to local branch
