@@ -120,10 +120,22 @@ There are 3 Stages, Working dir -> Staging Area -> Commit (3 Environments)
     + "restore --source=[The commit you wanna revert to] [file]"
                                 -> Restore [file] to its version in [The commit you wanna revert to]
 
-    detached HEAD -> Head pointer no longe points to latest branch commit
+    detached HEAD -> Head pointer no longer points to latest branch commit
     + "checkout [snapshot/history ID]" -> Move to [snapshot/history ID] (past states)
                                         => You can go back to the versions BEFORE and make changes there
                                                 (Or revert back to this version by making another branch and merge)
+    + "checkout main/master" -> Switch to the LATEST version
+                                can do git checkout -f main/master to force to latest version from detached head
+    + "branch -M [new_name]" -> Change the current branch name to [new_name] 
+--------------
+Github:
+    Local Repo: Stuff in your Device (git -init creaes local repo)
+    Remote Repo: Stuff stored in a server (hence remote, any1 can access)
+    
+    + "remote add origin [link 2 remote repo]" -> Clone entire remote repo
+            *Origin is a another word for [link 2 remote repo]
+    + "push -u origin [branch]" -> Push origin/remote repo to [branch]
+     
 
 ---------------
 - Other Commands:
