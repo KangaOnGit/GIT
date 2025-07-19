@@ -139,16 +139,30 @@ Github:
 
     + "checkout branch [branch_name]" -> Create new branch [branch_name] from the branch you're creating it in
                                         => If you create [branch_name] from main, [branch_name] will have files of main
-                                => If you create a new branch from [branch_name], new branch will have files of [branch_name]
+                            => If you create a new branch from [branch_name], new branch will have files of [branch_name]
 
     + "branch [the new branch name] [branch you wanna branch from]" -> Create a branch from [branch u wanna branch from]
                                                                                 named [the new branch name]
+                    * If you create a new branch
+                    * You gotta push that new branch to github for it to show there
+
+    + "push --set-upstream origin [branch_name]" -> Publish [branch_name] to Github
+                                                        (From Local Repo to Remote Repo)
+                + You can also do "push -u origin [branch_name]" -> Push [branch_name]
+                + Both -u and --set-upstream establish a tracking between local branch and remote branch.
+                + After this, you can do "git push" without needing all the extras
+
+    + "pull" -> Fetches changes made to the branch you track from remote repo to YOUR local repo
+                            + Basically updating your local repo
+
     + "checkout [branch_name]" -> Switch to branch [branch_name]
     + "checkout -b [branch_name]" Create branch [branch_name] and move to it immediately
 Branches: Branch out from main, what u changed in branch will not be changed in main
                                                             (until u merge)
-
-
+Once you have tested the branch and it works fine, you wanna merge it to main branch:
+    -> Open a Pull Request (Share changes to team for review and feedback)
+            * Gotta have the same BASE commit history to merge (Share common history)
+            
 ---------------
 - Other Commands:
     + "ls" -> List all files in working directory
