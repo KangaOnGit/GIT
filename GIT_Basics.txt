@@ -141,13 +141,24 @@ Github:
                                         => If you create [branch_name] from main, [branch_name] will have files of main
                                 => If you create a new branch from [branch_name], new branch will have files of [branch_name]
 
+    + "push --set-upstream origin [branch_name]" -> Link local [branch_name] to the remote [branch_name]
+                                                        => Pushing the local branch to remote
+                - Or you can do "git push -u origin [branch]"
+                - After estalishing a connection then u can just do "git push" like normal
+
+    + "pull" -> If somebody made changes to your remote branch that you're tracking with your local branch
+                    do "git pull" To fetch changes from that remote branch to local branch
+
     + "branch [branch you wanna branch from] [the new branch name]" -> Create a branch from [branch u wanna branch from]
                                                                                 named [the new branch name]
     + "checkout [branch_name]" -> Switch to branch [branch_name]
     + "checkout -b [branch_name]" Create branch [branch_name] and move to it immediately
+
 Branches: Branch out from main, what u changed in branch will not be changed in main
                                                             (until u merge)
-    + "merge" ->
+Once you've made all changes and tested that it works in the branch, you wanna merge to main branch
+        -> Open a Pull Request
+        -> Share changes with team for review and feedback -> Approved and Merge to main
 
 ---------------
 - Other Commands:
