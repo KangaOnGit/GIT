@@ -135,6 +135,8 @@ GREEN -> Remote
     Remote Repo: Stuff stored in a server (hence remote, any1 can access)
     
     + "remote add origin [link 2 remote repo]" -> Clone entire remote repo
+            * The [link 2 remote repo] will NOW be your origin  
+                    -> Everytime you say origin, youre referring to the remote repo
             *Origin is a another word for [link 2 remote repo]
             
     + "push -u origin [branch]" -> Push origin/remote repo to [branch]
@@ -151,19 +153,23 @@ GREEN -> Remote
                                 and not "git commit" (git commit is for local)
                     YOU HAVE TO DO "git commit" first THEN do "git push"
 
-    + "pull" -> If somebody made changes to your remote branch that you're tracking with your local branch
-                    do "git pull" To fetch changes from that remote branch to local branch
+    + "pull [origin/repo u wanna pull] [branch from origin u wanna pull]"
+                    -> If somebody made changes to your remote branch that you're tracking with your local branch
+                    do "git pull [repo] [that remote branch]" To fetch changes from that remote branch to local branch
 
     + "branch [branch you wanna branch from] [the new branch name]" -> Create a branch from [branch u wanna branch from]
                                                                                 named [the new branch name]
     + "checkout [branch_name]" -> Switch to branch [branch_name]
-    + "checkout -b [branch_name]" Create branch [branch_name] and move to it immediately
+    + "checkout -b [branch_name]" -> Create branch [branch_name] and move to it immediately
+    + "branch -M [new_branch_name]" -> Use on the current branch you're on to change its name   
+                                                to [new_branch_name]
 
 Branches: Branch out from main, what u changed in branch will not be changed in main
                                                             (until u merge)
 Once you've made all changes and tested that it works in the branch, you wanna merge to main branch
         -> Open a Pull Request
         -> Share changes with team for review and feedback -> Approved and Merge to main
+        Do "git merge [branch_name]" and it will merge [branch_name] to the main branch it's from
 
 ---------------
 - Other Commands:
